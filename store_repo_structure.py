@@ -83,6 +83,7 @@ def store_in_mongodb(repo_name, structure):
 
 def main():
     g = Github(GITHUB_TOKEN)
+    owner = "dkoradiya"
     reposname = g.get_repo(f'{owner}/{repo_name}')
     repo_name = reposname  # Specify your repository name
     structure = fetch_repo_structure(repo_name)
