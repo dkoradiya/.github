@@ -8,7 +8,7 @@ import datetime
 # Load environment variables
 load_dotenv()
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
-MONGODB_URI = os.getenv('MONGODB_URI')
+MONGODB_URI = "mongodb+srv://learnlink:learnlink@cluster0.ptp95.mongodb.net/learnlink"
 
 def fetch_repo_structure(repo_name, owner='dhavalk447'):
     """
