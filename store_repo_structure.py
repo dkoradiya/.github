@@ -10,7 +10,7 @@ import datetime
 GITHUB_TOKEN = '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'
 MONGODB_URI = "mongodb+srv://learnlink:learnlink@cluster0.ptp95.mongodb.net/learnlink"
 
-def fetch_repo_structure(repo_name, owner='dhavalk447'):
+def fetch_repo_structure(repo_name, owner='dkoradiya'):
     """
     Fetch the repository structure for a given repository.
     
@@ -82,7 +82,9 @@ def store_in_mongodb(repo_name, structure):
     print('Repository structure stored successfully')
 
 def main():
-    repo_name = 'abcd2'  # Specify your repository name
+    g = Github(GITHUB_TOKEN)
+    reposname = g.get_repo(f'{owner}/{repo_name}')
+    repo_name = reposname  # Specify your repository name
     structure = fetch_repo_structure(repo_name)
     store_in_mongodb(repo_name, structure)
 
